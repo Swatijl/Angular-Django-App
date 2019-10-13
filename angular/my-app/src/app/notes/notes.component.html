@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6"><h1>Write notes</h1></div>
+    <div class="col-sm-6">
+      <input type="text" placeholder="Search by name or number" [(ngModel)]="search">
+      <button (click)="searchUsers()">Search</button>
+      <!-- <div class="row" *ngIf="getSearchDetail.length"> -->
+        <div class="row" *ngFor="let x of getSearchDetail"></div>
+        <p>{{x.mobile}}</p>
+        <p>{{x.name}}</p>
+      <!-- </div> -->
+      <div class="row" *ngIf="getSearchDetail.length == 0">
+          <p>No such user exist</p>
+        </div>
+
+    </div>
+  </div>
+<div class="row">
+  <div class="col-sm-6">
+<input type="textarea" rows="5" [(ngModel)]="notes.desc">
+<button (click)="saveNotes()">Save</button>
+<button>Save & Share</button>
+</div>
+<div class="col-sm-6">
+  <p>Set Permission for other users</p>
+  <select [(ngModel)]="notes.status">
+    <option>View</option>
+    <option>Edit</option>
+  </select>
+</div>
+</div>
+<div class="row">
+  <button (click)="getNotes()">Display all the notes with access permissions</button>
+</div>
+<div class="row" *ngFor="let x of getnotes">
+  <p>{{x.desc}} : {{x.status}}</p>
+  <button>Change Permission</button>
+
+</div>
+</div>

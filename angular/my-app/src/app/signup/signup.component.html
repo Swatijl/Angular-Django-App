@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="container">
         <div class="row">
                 <label>Mobile:</label>
@@ -25,4 +25,97 @@
       <button (click)="signUp()">Register</button>
   </div>
   </div>
-  
+-->
+     <div class="row">
+     <div class="col-sm-4"></div>
+     <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-6">
+            <label for="mobile">Mobile:</label>
+        </div>
+       <div class="col-sm-6">
+        <input type="email" id="mobile" placeholder="Enter mobile no." [(ngModel)]="loginData.mo" name="mobile">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+            <label for="pwd">Password:</label>
+        </div>
+       <div class="col-sm-6">
+        <input type="password"  id="pwd" placeholder="Enter password" [(ngModel)]="loginData.pwd" name="pwd">
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">      
+          <button type="submit" class="btn btn-primary btn-login"  (click)="login()">Login</button></div>
+        <div class="col-sm-2"></div>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+     </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>Don't have an account?</p>
+        </div>
+    <div class="col-sm-6">
+        <button type="submit" class="btn btn-primary btn-login" data-toggle="modal" data-target="#myModal">Register</button>
+    </div>
+  </div>
+    </div>
+  <div class="col-sm-4"></div>
+  </div>
+
+
+  <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">Sign Up!!</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+           
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Name:</label>
+                  </div>
+                  <div class="col-sm-6">
+                  <input type="text" [(ngModel)]="signup.name" name="username"><br>
+                </div>
+              </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                  <label>Mobile:</label>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" [(ngModel)]="signup.mo" name="mobile"><br>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                      <label>Password:</label>
+                  </div>
+                    <div class="col-sm-6">
+                        <input type="Password" [(ngModel)]="signup.pwd" name="pwd"><br>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-2"></div>
+                      <div class="col-sm-8"> <button (click)="signUp()" class="btn btn-primary btn-login" data-dismiss="modal">Register</button></div>
+                      <div class="col-sm-2"></div>
+                </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    

@@ -3,11 +3,12 @@
     <div class="col-sm-6"><h1>Write notes</h1></div>
     <div class="col-sm-6">
       <input type="text" placeholder="Search by name or number" [(ngModel)]="search">
-      <button (click)="searchUsers()">Search</button>
-      <!-- <div class="row" *ngIf="getSearchDetail.length"> -->
-        <div class="row" *ngFor="let x of getSearchDetail"></div>
-        <p>{{x.mobile}}</p>
-        <p>{{x.name}}</p>
+      <button (click)="searchUsers()"><i class="fa fa-search"></i></button>
+      <!-- <div class="row" > -->
+        <ul *ngIf="getSearchDetail.length">
+          <!-- <li *ngFor="let x of getSearchDetail"> {{x.mobile}}</li> -->
+          <li *ngFor="let x of getSearchDetail"> {{x.name}}</li>
+        </ul>
       <!-- </div> -->
       <div class="row" *ngIf="getSearchDetail.length == 0">
           <p>No such user exist</p>

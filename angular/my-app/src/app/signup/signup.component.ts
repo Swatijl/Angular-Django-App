@@ -25,7 +25,7 @@ user:any={};
   {
     let postData ={
       "username": this.loginData.mo,
-      "password": this.loginData.pwd,
+      "password": this.loginData.pwd
     };
     this.api.postNotes('/login/',postData).subscribe(data => {
       console.log(data);
@@ -39,7 +39,7 @@ signUp(){
   let postData={
     "mobile":this.signup.mo,
     "name":this.signup.name,
-    "password":this.signup.pwd,
+    "password":this.signup.pwd
   };
   this.api.postNotes('/register/',postData).subscribe(data => {
     console.log(data);

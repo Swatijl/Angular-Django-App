@@ -12,12 +12,13 @@ notes={
   desc:"",
   status:""
 };
-getnotes={};
-getSearchDetail={};
+getnotes=[];
+getSearchDetail=[];
 search:any;
   constructor(private api:ApiService,private router:Router) { }
 
   ngOnInit() {
+    this.getNotes();
   }
 saveNotes(){
   let postData ={
@@ -31,7 +32,7 @@ saveNotes(){
   });
 }
 getNotes(){
-  this.getnotes ={};
+  this.getnotes =[];
   this.api.getNotes('/notes/').subscribe(data => {
     console.log(data);
     this.getnotes=data;
